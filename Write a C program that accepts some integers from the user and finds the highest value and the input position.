@@ -1,0 +1,47 @@
+/*33. Write a C program that accepts some integers from the user and finds the highest value and the input position.
+Test Data :
+Input 5 integers:
+5
+7
+15
+23
+45
+Expected Output:
+Highest value: 45
+Position: 5*/
+#include<stdio.h>
+#include<stdlib.h>
+void maximum_element(int a)
+{
+    
+    int *arr= malloc(a*sizeof(int));
+    for(int i=0;i<a;i++)
+    {
+        printf("Enter %d number ",i+1);
+        scanf("%d",&arr[i]);
+    }
+    int max=0;
+    int position=0;
+    for(int i=0; i<a;i++)
+    {   
+    
+        if(max<arr[i])
+        {
+            max= arr[i];
+            position=i+1;
+           
+        }
+        
+        //printf("The position is ");
+    }
+    printf("%d is maximum  number among them\n", max);
+    printf("The position is %d ",position);
+}
+int main()
+{
+    int a;
+    printf("Enter the number you want to add ");
+    scanf("%d",&a);
+    maximum_element(a);
+    return 0;
+}
